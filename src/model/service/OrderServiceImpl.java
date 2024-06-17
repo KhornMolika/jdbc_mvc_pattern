@@ -31,9 +31,9 @@ public class OrderServiceImpl implements OrderService{
     public void addNewOrder(Order order) throws ExceptionHandling {
         try{
             if (orderDao.addNewOrder(order) > 0) {
-                throw new ExceptionHandling("Order Added Successfully !");
+                System.out.println("Order Added Successfully");
             }else{
-                throw new ExceptionHandling("Cant add order");
+                throw new ExceptionHandling("Cannot add order");
             }
         }catch (ExceptionHandling e){
             System.out.println(e.getMessage());
@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService{
     public void updateOrderById(Integer id) throws ExceptionHandling {
         try {
             if(orderDao.updateOrderById(id)>0) {
-                throw new ExceptionHandling("Order Updated Successfully !");
+                System.out.println("Order Updated Successfully !");
             }else {
                 throw new ExceptionHandling("Cant update order");
             }
@@ -57,7 +57,7 @@ public class OrderServiceImpl implements OrderService{
     public void deleteOrderById(Integer id) {
         try {
             if(orderDao.deleteOrderById(id)>0) {
-                throw new ExceptionHandling("Order Deleted Successfully !");
+                System.out.println("Order Deleted Successfully !");
             }else {
                 throw new ExceptionHandling("Cant delete order");
             }

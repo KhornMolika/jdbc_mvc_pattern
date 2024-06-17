@@ -12,6 +12,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class OrderController {
@@ -33,7 +34,7 @@ public class OrderController {
         System.out.print("Enter Product ID: ");
         int productId = new Scanner(System.in).nextInt();
         new OrderServiceImpl().addNewOrder(Order.builder()
-                .id(1)
+                .id(new Random().nextInt(10000))
                 .orderName(orderName)
                 .orderDescription(orderDescription)
                 .orderedAt(Date.valueOf(LocalDate.now()))
